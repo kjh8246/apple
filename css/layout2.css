@@ -1,3 +1,9 @@
+@font-face {
+    font-family: '이쁜폰트';
+    src: url(../NanumSquare-master/NanumSquareR.woff);
+}
+
+
 .main-background{
     width: 100%;
     height: 500px;
@@ -48,3 +54,29 @@
     top: -80px;
     box-sizing: border-box;
 }
+body{
+    margin: 0px;
+    font-family: 'gulim';
+}
+
+p,h4,h3,h1,h1,span{
+    transform: rotate(0.03deg);
+}
+
+.nav{
+    box-sizing: border-box;
+    display: flex;
+    padding: 10px;
+    background-color: rgb(255,117,118);
+    width: 100%;
+    height: 50px;
+    align-items: center;
+
+}
+.nav-item{
+    color: white;
+    font-size: 1.5em;
+    margin-right: 10px;
+}
+
+
