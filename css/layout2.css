@@ -79,4 +79,94 @@ p,h4,h3,h1,h1,span{
     margin-right: 10px;
 }
 
+.flex{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    width: 80%;
+    margin: auto;
+    max-width: 1000px;
+}
+.flex-item{
+    text-align: center;
+    width: 25%;
+    float: left;
+}
 
+@media screen and (max-width: 1200px){
+    .main_title{
+        font-size: 30px;
+    }
+    .flex-item{
+        width: 50%;
+    }
+    .flex{
+        max-width: 700px;
+    }
+}
+
+.flex i{
+    background-color: burlywood;
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    padding-top: 25px;
+    box-sizing: border-box;
+    color: white;
+    margin-top: 20px;
+}
+.shop-bg{
+    background-color: #eee;
+    padding: 20px;
+}
+.shop-container{
+    display: flex;
+    width: 90%;
+    margin: auto;
+}
+.shop-item{
+    width: 33%;
+    padding: 15px;
+}
+.shop-item img{
+    width: 100%;
+    display: block;
+}
+.overlay-wrap{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.overlay-wrap:hover .overlay{
+    margin-top: 50%;
+    opacity: 1;
+}
+.overlay {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    margin-top: 100%;
+    transition: all 1s;
+}
+/* .overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    opacity: 0;
+    transition: all 1s;
+    transition-timing-function: cubic-bezier();
+}
+.overlay:hover{
+    opacity: 1;
+} */
+@media screen and (max-width: 768px){
+    .main_title{
+        font-size: 20px;
+    }
+    .flex-item{
+        width: 100%;
+    }
+    
+}
