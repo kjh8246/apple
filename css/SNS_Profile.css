@@ -1,0 +1,22 @@
+.sky-blue-color{
+    color: #6fbaf8 ;
+}
+.sky-blue-background{
+    background-color: #6fbaf8;
+    color: white;
+}
+.gray-background{
+    background-color: #f7f9fc;
+}
+.center{
+    margin: auto;
+}
+
+.pill{
+    display: inline-block;
+    border: 1px solid lightgray;
+    border-radius: 100px;
+    padding: 3px 12px 5px 12px;
+    margin-right: 10px;
+    margin-bottom: 5px;
+}
