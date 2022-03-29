@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>실력향상 과제</title>
+</head>
+<body>
+    <input type="text" id="tsn_in">
+    <button id="tsn_bt" onclick="treeSixNines()" value="0">값 확인</button>
+    
+    <script>
+        function treeSixNines(){
+            num = document.getElementById('tsn_in').value
+            if(num%9==0){
+                console.log('박수x2')
+            }else if(num%3==0 && num != (0||'')){
+                console.log('박수')
+            }else{
+                console.log('통과')
+            }
+            
+        }
+        function passTest(score1, score2){
+            if(score1<0 || score1>100){
+                alert('score1이 올바른 값이 아닙니다.')
+            }else if(score2<0 || score2>100){
+                alert('score2가 올바른 값이 아닙니다.')
+            }else if(score1+score2 >= 120 && score1 >= 40 && score2 >= 40){
+                console.log('합격')
+            }else{
+                console.log('불합격')
+            }
+        }
+        passTest(100,100)
+        
+    </script>
+</body>
+</html>

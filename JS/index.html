@@ -15,23 +15,67 @@
     <title>Hello, world!</title>
 </head>
 
-<body>
+<body class="">
 
     <div class="black-bg unshow">
         <div class="white-bg">
             <h4>로그인하세요</h4>
-            <button class="btn btn-danger" id="close">닫기</button>
+            <form action="success.html">
+                <div class="my-3">
+                    <input type="text" class="form-control" id="email">
+                </div>
+                <div class="my-3">
+                    <input type="password" class="form-control" id="pw">
+                </div>
+                <button type="submit" class="btn btn-primary">전송</button>
+                <button type="button" class="btn btn-danger" id="close">닫기</button>
+            </form>
         </div>
     </div>
+
+    <script>
+
+        document.querySelectorAll('.btn-primary')[0].addEventListener('click', function (e) {
+            if (document.getElementsByClassName('form-control')[0].value == "") {
+                alert('아공백')
+                e.preventDefault();
+            } else if (document.getElementsByClassName('form-control')[1].value == "") {
+                alert('비공백')
+                e.preventDefault();
+            } else if (document.getElementsByClassName('form-control')[1].value.length < 6) {
+                alert('비번 6이상 쓰기')
+                e.preventDefault();
+            }
+        });
+        // 전송버튼 누르면
+        // 저기 input에 입력한값이 공백이면 알림창 띄우기
+    </script>
 
     <nav class="navbar navbar-light bg-light">
         <div class="container-fluid">
             <span class="navbar-brand">Navbar</span>
+            <span class="badge bg-dark">Dark 🔄</span>
             <button class="navbar-toggler" type="button">
                 <span class="navbar-toggler-icon"></span>
             </button>
         </div>
     </nav>
+
+    <script>
+        var count = 0;
+
+        $('.badge').on('click', function () {
+            count++;
+            if (count % 2 == 0) {
+                document.querySelectorAll('.badge')[0].innerHTML = 'Light 🔄'
+            } else {
+                document.querySelectorAll('.badge')[0].innerHTML = 'Dark 🔄';
+            }
+        });
+
+        // badge 클릭횟수가 홀수면 light 짝수면 dark
+    </script>
+
 
     <ul class="list-group">
         <li class="list-group-item">An item</li>
@@ -40,23 +84,41 @@
         <li class="list-group-item">A fourth item</li>
         <li class="list-group-item">And a fifth one</li>
     </ul>
+    <div class="main-bg">
+        <h4>Shirts on Sale</h4>
+        <button id="login">로그인</button>
+    </div>
 
-    <button id="login">로그인</button>
+    <div class="alert alert-danger">
+        5초 이내 구매시 사은품 증정!
+    </div>
 
     <script>
-        
+
+        setTimeout(함수 , 1000)
+
+        function 함수(){
+            console.log('안녕')
+        }
+       
+
+    </script>
+
+    <script>
+
         // document.querySelector('.login').addEventListener('click', function () {
         //     document.querySelector('.black-bg').classList.toggle('show')
         // })
 
-        $('#login').on('click',function(){
+        $('#login').on('click', function () {
+            document.querySelector('.black-bg').style.display = 'block'
             $('.black-bg').addClass('show-modal')
         })
-        
-        $('#close').on('click',function(){
+
+        $('#close').on('click', function () {
             document.querySelector('.black-bg').style.display = 'none'
         })
-    
+
         document.querySelector('.navbar-toggler').addEventListener('click', function () {
             document.querySelector('.list-group').classList.toggle('show')
         })
