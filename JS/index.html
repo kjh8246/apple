@@ -34,16 +34,26 @@
     </div>
 
     <script>
+        
 
         document.querySelectorAll('.btn-primary')[0].addEventListener('click', function (e) {
-            if (document.getElementsByClassName('form-control')[0].value == "") {
-                alert('아공백')
+        var id = document.getElementsByClassName('form-control')[0].value;
+        var pw = document.getElementsByClassName('form-control')[1].value;
+            if ( id == "") {
+                alert('아이디 공백')
                 e.preventDefault();
-            } else if (document.getElementsByClassName('form-control')[1].value == "") {
-                alert('비공백')
+            } else if ( pw == "") {
+                alert('비밀번호 공백')
                 e.preventDefault();
-            } else if (document.getElementsByClassName('form-control')[1].value.length < 6) {
+            } else if (pw.length < 6) {
                 alert('비번 6이상 쓰기')
+                e.preventDefault();
+            }else if( /\S+@\S+\.\S+/.test(id)==false){
+                alert('이메일형식아님');
+                e.preventDefault();
+            }
+            else if(/[A-Z]/.test(id)==false){
+                alert('이메일형식아님');
                 e.preventDefault();
             }
         });
@@ -89,18 +99,98 @@
         <button id="login">로그인</button>
     </div>
 
+<div style="overflow: hidden;">
+    <div class="slide-container">
+        <div class="slide-box">
+            <img src="../images/car1.png" alt="">
+        </div>
+        <div class="slide-box">
+            <img src="../images/car2.png" alt="">
+        </div>
+        <div class="slide-box">
+            <img src="../images/car3.png" alt="">
+        </div>
+    </div>
+</div>
+
+<button class="slide-1">1</button>
+<button class="slide-2">2</button>
+<button class="slide-3">3</button>
+<button class="next">다음</button>
+<button class="before">이전</button>
+<script>
+    var index =1;
+    
+    $('.next').on('click',function(){
+        $('.slide-container').css('transform', `translateX(-${index}00vw)`)
+        if(index==2){
+            index=0
+        }else{
+            index++;
+        }
+    })
+    
+
+
+
+    $('.before').on('click',function(){
+        
+        if(index==0){
+            $('.slide-container').css('transform', 'translateX(-200vw)')
+        }else if(index==1){
+            $('.slide-container').css('transform', 'translateX(0vw)')
+        }else if(index==2){
+            $('.slide-container').css('transform', 'translateX(-100vw)')
+        }
+        if(index==0){
+            index=2
+        }else{
+            index--;
+        }
+        
+    })
+    $('.slide-1').on('click',function(){
+        $('.slide-container').css('transform', 'translateX(0vw)')
+        index=1
+    })
+    $('.slide-2').on('click',function(){
+        $('.slide-container').css('transform', 'translateX(-100vw)')
+        index=2
+    })
+    $('.slide-3').on('click',function(){
+        $('.slide-container').css('transform', 'translateX(-200vw)')
+        index=3
+    })
+
+</script>
+
+
+
+
+
+
+
+
     <div class="alert alert-danger">
-        5초 이내 구매시 사은품 증정!
+        <span class="count">5</span>초 이내 구매시 사은품 증정!
     </div>
 
     <script>
+        var time = 5;
 
-        setTimeout(함수 , 1000)
+        setInterval(function () {
+            time--;
+            if (time <= 0) {
+                $('.alert').hide();
+            }
+            $('.count').html(time)
+        }, 1000)
 
-        function 함수(){
-            console.log('안녕')
-        }
-       
+
+
+
+
+
 
     </script>
 
