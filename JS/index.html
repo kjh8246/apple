@@ -15,7 +15,7 @@
     <title>Hello, world!</title>
 </head>
 
-<body class="">
+<body>
 
     <div class="black-bg unshow">
         <div class="white-bg">
@@ -34,7 +34,15 @@
     </div>
 
     <script>
-        
+        // document.querySelector('.black-bg').addEventListener('click',function(){
+        //     document.querySelector('.black-bg').classList.remove('show-modal')   
+        // })
+        $('.black-bg').on('click',function(e){
+            console.log(e.target)
+            console.log(document.querySelector('.black-bg'))
+            if(e.target==document.querySelector('.black-bg'))
+            $('.black-bg').removeClass('show-modal')
+        })
 
         document.querySelectorAll('.btn-primary')[0].addEventListener('click', function (e) {
         var id = document.getElementsByClassName('form-control')[0].value;
@@ -72,8 +80,23 @@
     </nav>
 
     <script>
-        var count = 0;
 
+        window.addEventListener('scroll',function(){
+            // console.log(window.scrollY)
+            if(window.scrollY>=100){
+                document.querySelector('.navbar-brand').style.fontSize="20px"
+            }else{
+                document.querySelector('.navbar-brand').style.fontSize="30px"
+            }
+        })
+
+    </script>
+
+
+
+    <script>
+        var count = 0;
+        
         $('.badge').on('click', function () {
             count++;
             if (count % 2 == 0) {
@@ -82,9 +105,9 @@
                 document.querySelectorAll('.badge')[0].innerHTML = 'Dark 🔄';
             }
         });
-
+        
         // badge 클릭횟수가 홀수면 light 짝수면 dark
-    </script>
+        </script>
 
 
     <ul class="list-group">
@@ -98,16 +121,16 @@
         <h4>Shirts on Sale</h4>
         <button id="login">로그인</button>
     </div>
-
-<div style="overflow: hidden;">
-    <div class="slide-container">
-        <div class="slide-box">
-            <img src="../images/car1.png" alt="">
-        </div>
-        <div class="slide-box">
-            <img src="../images/car2.png" alt="">
-        </div>
-        <div class="slide-box">
+    
+    <div style="overflow: hidden;">
+        <div class="slide-container">
+            <div class="slide-box">
+                <img src="../images/car1.png" alt="">
+            </div>
+            <div class="slide-box">
+                <img src="../images/car2.png" alt="">
+            </div>
+            <div class="slide-box">
             <img src="../images/car3.png" alt="">
         </div>
     </div>
@@ -130,9 +153,9 @@
         }
     })
     
-
-
-
+    
+    
+    
     $('.before').on('click',function(){
         
         if(index==0){
@@ -161,11 +184,48 @@
         $('.slide-container').css('transform', 'translateX(-200vw)')
         index=3
     })
-
+    
 </script>
 
+    <div class="lorem"style="width: 200px; height: 100px; overflow-y: scroll;">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae voluptas voluptatum minus praesentium fugit debitis at, laborum ipsa itaque placeat sit, excepturi eius. Nostrum perspiciatis, eligendi quae consectetur praesentium exercitationem.</div>
+    <script>
+        $('.lorem').on('scroll',function(){
+            var 스크롤양 = document.querySelector('.lorem').scrollTop;
+            var 실제높이 = document.querySelector('.lorem').scrollHeight;
+            var 높이 = document.querySelector('.lorem').clientHeight;
+            console.log(스크롤양,실제높이,높이);
 
+            if(스크롤양+높이 >= 실제높이){
+                alert('완료')
+            }
 
+        })
+    </script>
+<script>
+    function time(m,s){
+        var m = m*60;
+        var total;
+        total = ( m + s ) * 1000;
+        return(total)
+        
+    }
+    console.log(time(2,10)) 
+    
+    function sale(money,tf){
+        var total
+        if(tf){
+            total = money*0.9 - 1.5
+        }else{
+            total = money*0.9
+        }
+        return total
+    }
+
+    console.log(sale(70,false))
+    console.log(sale(10,true))
+
+</script>
 
 
 
@@ -188,11 +248,11 @@
 
 
 
-
-
-
-
-    </script>
+        
+        
+        
+        </script>
+        <div style="height: 1000px;"></div>
 
     <script>
 
