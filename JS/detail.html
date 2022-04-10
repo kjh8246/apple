@@ -23,11 +23,69 @@
         </div>
     </div>
     <script>
-        var car2 = {name : '소나타',price : [50000,3000,4000]}
-        document.querySelector('#name').innerHTML=car2.name;
-        document.querySelector('#price').innerHTML=car2.price[0];
+        var car2 = { name: '소나타', price: [50000, 3000, 4000] }
+        document.querySelector('#name').innerHTML = car2.name;
+        document.querySelector('#price').innerHTML = car2.price[0];
     </script>
-    
+
+    <form class="container my-5 form-group">
+        <p>상품선택</p>
+        <select class="form-select mt-2">
+            <option>모자</option>
+            <option>셔츠</option>
+            <option>바지</option>
+        </select>
+        <select class="form-select mt-2 hide">
+            <option>95</option>
+            <option>100</option>
+        </select>
+    </form>
+
+    <div id="test">
+        반가워
+    </div>
+
+    <script>
+        var 탬플릿 = '<p>안녕</p>';
+        document.querySelector('#test').insertAdjacentHTML('beforeend', 탬플릿);
+        $('#test').html(탬플릿);
+
+        var pants = [28, 30, 32, 34];
+        var shirts = [95, 100, 105];
+
+        $('.form-select').eq(0).on('input', function (e) {
+
+            var value = e.currentTarget.value;
+            if (value == "셔츠") {
+                $('.form-select').eq(1).removeClass('hide')
+                $('.form-select').eq(1).html('')
+                shirts.forEach(function(data){
+                    console.log(data)
+                    $('.form-select').eq(1).append(`<option>${data}</option>`)
+                })
+                
+            } else if (value == "바지") {
+                $('.form-select').eq(1).removeClass('hide')
+                $('.form-select').eq(1).html('')
+                pants.forEach(function(a){
+                    console.log(a)
+                    $('.form-select').eq(1).append(`<option>${a}</option>`)
+                })
+
+            } else {
+                $('.form-select').eq(1).addClass('hide')
+            }
+        })
+
+        var obj = {name : 'kim', age : 20}
+        for(var key in obj){
+            console.log(obj[key])
+        }
+
+    </script>
+
+
+
     <div class="container mt-5">
         <ul class="list">
             <li class="tab-button" data-id="0">Products</li>

@@ -13,7 +13,7 @@ $('.list').click(function(e){
 })
 
 function 탭열기(숫자){
-    $('.tab-button').removeClass('orange');
+        $('.tab-button').removeClass('orange');
         $('.tab-content').removeClass('show');
         $('.tab-button').eq(숫자).addClass('orange');
         $('.tab-content').eq(숫자).addClass('show');

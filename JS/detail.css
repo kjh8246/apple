@@ -36,7 +36,11 @@ ul.list::after {
     padding: 10px;
 }
 
-.show {
+.show{
     display: block;
+}
+
+.hide {
+    display: none;
 }
 

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var 출석부 = ['흥민', '영희', '철수', '재석'];
+
+        function 이름찾기(이름) {
+            //배열안 확인해서 if문으로 데이터 들어갔는지 아닌지 구별
+
+            출석부.forEach(function (data) {
+                if (data == 이름) {
+                    console.log('있어요')
+                }
+            })
+        }
+        이름찾기('철수');
+        이름찾기('명수');
+
+        for(let i=2;i<10;i++){  //2~9까지
+            for(let j=1;j<10;j++){
+                console.log(i*j)
+            }
+        }
+    </script>
+</body>
+
+</html>
