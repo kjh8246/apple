@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+
+        // var 학생1 = {
+        //     name : 'Kim', 
+        //     age : 15
+        //     sayHi : function(){
+        //         console.log('안녕하세요' + this.name + '입니다.')
+        //     }
+        // }
+
+        //학생1.sayHi();
+
+        // function 기계(구멍){
+        //     this.name = 구멍;
+        //     this.age = 15;
+        //     this.sayHi = function(){
+        //         console.log('안녕하세요 ' + this.name + '입니다')
+        //     }
+
+        // }
+
+        // 기계.prototype.gender = '남'
+
+        // var 학생1 = new 기계('김');
+        // var 학생2 = new 기계('재');
+
+        // 학생1.sayHi()
+        // 학생2.sayHi()
+
+        // var arr = [1,2,3]
+        // var arr = new Array(1,2,3);
+        // var obj = {name : 'kim'}
+        // var obj = new Object();
+
+        // var 부모 = { name : 'kim'}
+        // var 자식 = {}
+        // 자식.__proto__ = 부모
+
+
+        // function Product (name,price){
+        //     this.name = name;
+        //     this.price = price;
+        //     this.부가세 = function(){
+        //         console.log(this.price*0.1)
+        //     }
+        // }
+        // var 물품1 = new Product('shorts',50000);
+        // var 물품2 = new Product('pants',60000);
+
+        // 물품1.부가세()
+
+        // function 학생(이름, 나이) {
+        //     this.name = 이름;
+        //     this.age = 나이;
+        //     this.sayHi = function () {
+        //         console.log(`안녕 나는 ${this.name}이야`)
+        //     }
+        // }
+        // var 학생1 = new 학생('Kim', 20)
+        // var 학생2 = new 학생('Park', 21)
+        // var 학생3 = new 학생('Lee', 21)
+        // //학생.prototype.sayHi = function(){console.log(`안녕 나는 ${this.name}이야`)}
+
+        // 학생2.sayHi()
+        // console.log(학생1)
+
+        // function Parent() {
+        //     this.name = 'Kim';
+        // }
+        // var a = new Parent();
+
+        // a.__proto__.name = 'Park';
+        // console.log(a.name)
+
+        // //화살표함수는 this의 용도가 다르다 일반 function은 this의 오브젝트를 출력하지만
+        // //화살표함수는 자기의 부모요소를 출력한다.
+
+        // Array.prototype.remove=function(num){
+        //     console.log(this)
+        //     for(let i=0; i<this.length;i++){
+        //         if(this[i]==num){
+        //             this.splice(i,1)
+        //         }
+        //     }
+        // }
+        // var marr = [1,2,3,4,5]
+        // marr.remove(2)
+        // console.log(marr)
+
+        // Array.prototype.remove3=function(){
+        //     //여기서 어래이 3 없에야함
+
+        //     for(let i=0; i<this.length;i++){
+
+        //         if(this[i]==3){
+        //             this.splice(i,1)
+        //         }
+        //     }
+        // }
+        // var arr = [1,2,3,4];
+        // arr.remove3();
+
+        // console.log(arr);
+
+        // var 부모 = {name : 'Kim' ,age : 50};
+        // 자식 = Object.create(부모);
+        // 자식.age=20
+        // console.log(자식)
+
+        // var 손자 = Object.create(자식);
+        class 부모 {
+            constructor(aaa) {
+                this.name = aaa;
+                //this.sayHi = function(){console.log('hello')}
+            }
+
+            sayHi() {
+                console.log('hello')
+            }
+        }
+
+        var 자식 = new 부모('qwer');
+        자식.__proto__;
+        Object.getPrototypeOf(자식)
+
+    </script>
+</body>
+
+</html>

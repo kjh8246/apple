@@ -9,27 +9,328 @@
 </head>
 
 <body>
-    <button id="버튼">버튼</button>
-    <script>
+    <!-- <button id="버튼">버튼이에요</button>
+    <div style="display : none">모달창0</div>
+    <div style="display : none">모달창1</div>
+    <div style="display : none">모달창2</div>
 
+    <button>버튼0</button>
+    <button>버튼1</button>
+    <button>버튼2</button>
+    <script>    //this
+        // var 함수 = (a,b) => console.log(a);
+        // 함수(5);
+        // [1,2,3,4].forEach(a => console.log(a));
 
-        var 함수 = (a,b) => console.log(a);
-        함수(5);
-        [1,2,3,4].forEach(a => console.log(a));
-        
-        document.getElementById('버튼').addEventListener('click',
-        (e) => {
-            e.currentTarget;
-        });
+        // document.getElementById('버튼').addEventListener('click',
+        // (e) => {
+        //     e.currentTarget;
+        // });
 
-        var 오브젝트 = {
-            함수 : () => {
-                return this
+        // var 오브젝트 = {
+        //     함수 : () => {
+        //         return this
+        //     }
+        // }
+        // 오브젝트.함수()
+        console.log('this & arrow function')
+        var 사람 = {
+            name: '손흥민',
+            sayHi: function () {
+                console.log(`안녕 나는 ${this.name}`)
             }
         }
-        오브젝트.함수()
+        사람.sayHi()
+        var b = 0
+        var 자료 = {
+            data: [1, 2, 3, 4, 5],
+            //전부더하기 :  () => 자료.data.forEach(a => console.log(b+=a))
+
+        }
+        자료.전부더하기 = function () {
+            var 합 = 0
+            this.data.forEach(a => {
+                합 += a
+            });
+            console.log(합)
+        }
+
+        자료.전부더하기()
+
+        // document.getElementById('버튼').addEventListener('click', function () {
+        //     setTimeout(() => console.log(this.innerHTML), 1000)
+
+        // });  
+    </script>
+    <script>    //변수
+        //hoisting현상
+        console.log('hoisting, 전역변수, 참조')
+        console.log(나이)
+
+        var 나이 = 30
+
+        console.log(나이)
+        //선언, 할당, 범위, 호이스팅
+
+        var 나이 = 20, 이름 = 'ㅁ', 성별;
+        window.이름 = '김';
+        console.log(이름)
+        console.log(window.이름)
+        function 함수() {
+            console.log(나이)
+        }
+        함수()
+
+        function 함수() {    //함수도 호이스팅
+
+        }
+
+        if (true) {
+            let a = 1;
+            var b = 2
+            if (true) {
+                let b = 3
+            }
+            console.log(b)
+        }
+        /*
+        1. undefind / 애러
+        2. 안녕 / 애러
+        3. 1 / 1 
+        4. 3 / 5
+        5. var 을 let으로 바꿈 재선언차이?
+        6. var 을 let으로 바꿈
+        */
+        for (let i = 0; i < 5; i++) {
+            setTimeout(function () { console.log(i); }, i * 1000);
+        }
+        var 버튼들 = document.querySelectorAll('button');
+        var 모달창들 = document.querySelectorAll('div');
+
+        for (let i = 0; i < 3; i++) {
+
+            버튼들[i].addEventListener('click', function () {
+                모달창들[i].style.display = 'block';
+            });
+
+        }
+        // var 버튼들 = document.querySelectorAll('button');
+        // var 모달창들 = document.querySelectorAll('div');
+
+        // for (var i = 0; i < 3; i++) {
+
+        //     버튼들[i].addEventListener('click', function () {
+        //         모달창들[i].style.display = 'block';
+        //     });
+
+        // }
+    </script> -->
+
+    <script>
+        // var 변수 = '손흥민'
+        // var 문자 = `안녕하세요 ${변수} 입니다.`;
+        
+        // function 해체분석기(문자들,변수들){
+        //     console.log(문자들[1] + 변수들 +문자들[0]);
+            
+        // }
+        // 해체분석기`안녕하세요 ${변수} 입니다.`
+
+        // var pants = 0;
+        // var socks = 100;
+        // // function 해체분석기(문자들,바지,양말){
+        // //     console.log(문자들[0]+양말+문자들[1]+바지)
+        // // }
+        // function 해체분석기(문자들,변수들1,변수들2){
+        //     if(변수들1 == 0)
+        //         console.log('바지다팔렸어요' + 문자들[1]+변수들2)
+        //     else
+        //         console.log(문자들[0]+변수들1+문자들[1]+변수들2)
+        // }
+
+        // 해체분석기`바지${pants} 양말${socks}`
+
+        // var 어레이 = ['hello','world'];
+        // console.log(...어레이)
+        // console.log('hello','world')
+
+        // var 문자 = 'hello';
+        // console.log(...문자)
+        
+        // var a = [1,2,3];
+        // var b = [4,5];
+        // var c = [...a,...b];
+
+        // var a = [1,2,3]
+        // var b = [...a]
+        // a[3]=4
+
+        // console.log(a)
+        // console.log(b)
+
+        // var o1 = {a:1, b:2}
+        // var o2 = {...o1, a : 2 }
+        
+        // console.log(o2)
+        
+        // function 더하기(a,b,c){
+        //     console.log(a+b+c)
+        // }
+        // var a = [10,20,30]
+        // 더하기.apply(undefined, 어레이 )
+        // 더하기(...a);
+
+        // var person = {
+        //     인사 : function(){
+        //         console.log(this.name+'안녕')
+        //     }
+        // }
+
+        // var person2 = {
+        //     name : '손흥민'
+        // }
+
+        // person.인사.apply(person2,[1])
+        // person.인사.call(person2, 1)
+        // console.log(person2)
+    </script>
+
+    <script>
+        // function 임시함수(){
+
+        //     return 10 
+        // }
+
+        // function 더하기(a,b=임시함수()){
+        //     console.log(a+b)
+        // }
+        // 더하기(1)
+
+        // function 함수(a,b,c){
+        //     for(var i = 0; i< arguments.length;i++){
+        //         console.log(arguments[i])    
+        //     }
+        // }
+
+        // //함수(1,3,5)
+
+        // function 함수2(a,b,...rest){
+        //     for(var i = 0;i<rest.length;i++){
+        //         console.log(rest[i])
+        //     }
+            
+        // }
+        
+        // 함수2(1,2)
+        /*
+        1. ['김','밥',1,2,3]
+        2. [[1,2,3],'you','are'] = ['you']
+        3. 9
+        4. 15
+        5. 
+        6.
+        7.
+        8.
+        */
+        
+        // function 어레이(...rest){
+            
+        //     return rest
+        // }
+        // var newArray = 어레이(1,2,3,4,5);
+        // console.log(newArray); 
+        // console.log(어레이(1,2,3,4,5))
+
+
+        // var numbers = [2,3,4,5,6,1,3,2,5,5,4,6,7];
+        // console.log(Math.max(...numbers)) 
+
+        
+    //     function 정렬(rest){
+    //         console.log([...rest].sort())
+    //     }
+    //     정렬('bear')
+
+    //     function 글자세기(rest){
+    //         var 오브젝트 = {a : 0,b : 0,c : 0,d : 0,e : 0,f : 0,g : 0,h : 0,i : 0,j : 0,k : 0,l : 0,m : 0,n : 0,o : 0,p : 0,q : 0,r : 0,s : 0,t : 0,u : 0,v : 0,w : 0,x : 0,y : 0,z : 0}
+            
+    //         var 알파벳 = [...rest]
+            
+            
+    //         for(let i=0;i<알파벳.length;i++){
+                
+    //             switch(알파벳[i]){
+    //                 case 'a': 오브젝트.a++ 
+    //                 break
+    //                 case 'b': 오브젝트.b++
+    //                 break
+    //                 case 'c': 오브젝트.c++
+    //                 break
+    //                 case 'd': 오브젝트.d++
+    //                 break
+    //                 case 'e': 오브젝트.e++
+    //                 break
+    //                 case 'f': 오브젝트.f++
+    //                 break
+    //                 case 'g': 오브젝트.g++
+    //                 break
+    //                 case 'h': 오브젝트.h++
+    //                 break
+    //                 case 'i': 오브젝트.i++
+    //                 break
+    //                 case 'j': 오브젝트.j++
+    //                 break
+    //                 case 'k': 오브젝트.k++
+    //                 break
+    //                 case 'l': 오브젝트.l++
+    //                 break
+    //                 case 'm': 오브젝트.m++
+    //                 break
+    //                 case 'n': 오브젝트.n++
+    //                 break
+    //                 case 'o': 오브젝트.o++
+    //                 break
+    //                 case 'p': 오브젝트.p++
+    //                 break
+    //                 case 'q': 오브젝트.q++
+    //                 break
+    //                 case 'r': 오브젝트.r++
+    //                 break
+    //                 case 's': 오브젝트.s++
+    //                 break
+    //                 case 't': 오브젝트.t++
+    //                 break
+    //                 case 'u': 오브젝트.u++
+    //                 break
+    //                 case 'v': 오브젝트.v++
+    //                 break
+    //                 case 'w': 오브젝트.w++
+    //                 break
+    //                 case 'x': 오브젝트.x++
+    //                 break
+    //                 case 'y': 오브젝트.y++
+    //                 break
+    //                 case 'z': 오브젝트.z++
+    //                 break
+    //             }
+    //         }
+
+    //         console.log(오브젝트)
+    //     }
+    //     글자세기('asdfqwergasdfaswefsadfds')
+    // 
+    
+    var 이름1 = {name : '김'};
+    var 이름2 = {name : '김'}
+    
+    function 변경(obj){
+        obj = { name : 'park'}
+    }
+    변경(이름1)
+
 
     </script>
+
 </body>
 
 </html>
