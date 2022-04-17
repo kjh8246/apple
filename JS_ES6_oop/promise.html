@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script> 
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 </head>
+
 <body>
     <!-- <img id="test" src="https://codingapple1.github.io/kona.jpg"> 
     <script>
@@ -65,7 +67,7 @@
              console.log(결과)
          })
     </script> -->
-    
+
     <script>
 
         // class 부모{
@@ -77,9 +79,9 @@
         // //Object.getOwnPropertyDescriptor(오브젝트,'name')
 
         // for (var key in 오브젝트){
-            
+
         //         console.log(오브젝트[key])
-            
+
         // }
 
         // var 어레이 = [2,3,4,5]
@@ -89,10 +91,95 @@
         // }
 
         // 어레이[Symbol.iterator]();
+        // let 데이터 = [1,2,3,4,5,6,7,8,9] 
+        // for(var 자료1 of 데이터){
+        //     for(var 자료2 of 데이터){
+        //         console.log(`${자료1} * ${자료2} = ${자료1*자료2}`)
+        //     }
+
+        // }
+        // var products = [
+        //     {
+        //         name1: 'chair',
+        //         price1: 7000,
+        //     },
+        //     {
+        //         name2: 'sofa',
+        //         price: 5000,
+        //     },
+        //     {
+        //         name1: 'desk',
+        //         price3: 9000,
+        //     },
+        // ];
+
+        // var product = {
+        //         name1: 'chair',
+                
+        //     }
+        // //마지막 글자가 숫자이면 숫자 삭제
+        // for (key in product){
+        //     if(isNaN(key.charAt(key.length-1))==false){
+        //         let newValue = product['name1']
+        //         let newKey = key.slice(0,-1)
+        //         product[newKey] = newValue
+        //         delete product[key]
+        //     }
+        // }
+        // console.log(product)
         
+        // let newValue;
+        // let newKey;
+
+        // for(let 자료 of products){
+        //     for(let key in 자료){
+        //         if(isNaN(key.charAt(key.length-1))==false){
+        //         newValue = 자료[key]
+        //         newKey = key.slice(0,-1)
+        //         자료[newKey] = newValue
+        //         delete 자료[key]
+        //     }
+        //     }
+        // }
+        // console.log(products)
+
+        // for(var key1 in products){  //key1 : 0,1,2
+        //     for(var key2 in products[key1]){ //products[0]일때 키출력 ...
+        //         if(isNaN(key2.charAt(key2.length)) )
+        //             console.log(key2)
+        //         else {
+        //             console.log(key2.slice(0,-1))
+                    
+        //         }
+        //     }
+        // }
+        // console.log(products)
+    </script>
+
+    <script>
+        var 심볼 = Symbol('설명')
+
+        var weight = Symbol('내 시크릿 몸무게')
+        var height = Symbol('내 키')
+
+        var person = {name : 'KJH',[height] : 169};
         
+        person.weight = 100;
+        person[weight] = 200
+
+        var a = Symbol.for('설명1');
+        var b = Symbol.for('설명1')
+
+        for (var key in person){
+            console.log(person[key])
+        }
+        console.log(person)
+
+        var 어레이 = [2,3,4]
+        어레이[Symbol.iterator]
 
     </script>
-    
+
 </body>
+
 </html>
